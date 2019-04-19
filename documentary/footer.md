@@ -4,6 +4,10 @@
 
 ## Copyright
 
+Original Author: **Jordan Harband**
+
+---
+
 <IdioFooter />
 
 %~ -1%

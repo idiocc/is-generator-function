@@ -50,6 +50,10 @@ false
 
 ## Copyright
 
+Original Author: **Jordan Harband**
+
+---
+
 <table>
   <tr>
     <th>
