@@ -1,26 +1,33 @@
-import { debuglog } from 'util'
-
-const LOG = debuglog('@goa/is-generator-function')
-
-/**
- * [fork] Checks If The Function Is An ES6 Generator.
- * @param {Config} [config] Options for the program.
- * @param {boolean} [config.shouldRun=true] A boolean option. Default `true`.
- * @param {string} config.text A text to return.
- */
-export default async function isGeneratorFunction(config = {}) {
-  const {
-    shouldRun = true,
-    text,
-  } = config
-  if (!shouldRun) return
-  LOG('@goa/is-generator-function called with %s', text)
-  return text
+// https://github.com/ljharb/is-generator-function/blob/master/index.js
+const toStr = Object.prototype.toString
+const fnToStr = Function.prototype.toString
+const isFnRegex = /^\s*(?:function)?\*/
+const hasToStringTag = typeof Symbol == 'function' && typeof Symbol.toStringTag == 'symbol'
+const getProto = Object.getPrototypeOf
+const getGeneratorFunc = function () { // eslint-disable-line consistent-return
+  if (!hasToStringTag) {
+    return false
+  }
+  try {
+    return Function('return function*() {}')()
+  } catch (e) { /**/}
 }
+const generatorFunc = getGeneratorFunc()
+const GeneratorFunction = generatorFunc ? getProto(generatorFunc) : {}
 
-/* documentary types/index.xml */
 /**
- * @typedef {Object} Config Options for the program.
- * @prop {boolean} [shouldRun=true] A boolean option. Default `true`.
- * @prop {string} text A text to return.
+ * Check if the function is a generator function.
  */
+export default function isGeneratorFunction(fn) {
+  if (typeof fn != 'function') {
+    return false
+  }
+  if (isFnRegex.test(fnToStr.call(fn))) {
+    return true
+  }
+  if (!hasToStringTag) {
+    const str = toStr.call(fn)
+    return str == '[object GeneratorFunction]'
+  }
+  return getProto(fn) == GeneratorFunction
+}
