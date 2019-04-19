@@ -1,19 +1,20 @@
 # @goa/is-generator-function
 
-[![npm version](https://badge.fury.io/js/@goa/is-generator-function.svg)](https://npmjs.org/package/@goa/is-generator-function)
+[![npm version](https://badge.fury.io/js/%40goa%2Fis-generator-function.svg)](https://npmjs.org/package/@goa/is-generator-function)
 
-`@goa/is-generator-function` is [fork] Checks If The Function Is An ES6 Generator.
+`@goa/is-generator-function` is a [fork](https://github.com/ljharb/is-generator-function) that Checks If The Function Is An ES6 Generator written in ES6 modules.
+
+The original module has been updated to be used in [`@goa/koa`](https://artdecocode.com/goa/): _Koa_ web server compiled with _Google Closure Compiler_ using [**Depack**](https://artdecocode.com/depack/) into a single file library (0 dependencies).
 
 ```sh
-yarn add -E @goa/is-generator-function
+yarn add @goa/is-generator-function
 ```
 
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`isGeneratorFunction(arg1: string, arg2?: boolean)`](#mynewpackagearg1-stringarg2-boolean-void)
-  * [`Config`](#type-config)
+- [`isGeneratorFunction(fn: function)`](#isgeneratorfunctionfn-function-void)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -28,38 +29,48 @@ import isGeneratorFunction from '@goa/is-generator-function'
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
-## `isGeneratorFunction(`<br/>&nbsp;&nbsp;`arg1: string,`<br/>&nbsp;&nbsp;`arg2?: boolean,`<br/>`): void`
+## `isGeneratorFunction(`<br/>&nbsp;&nbsp;`fn: function,`<br/>`): void`
 
-Call this function to get the result you want.
-
-__<a name="type-config">`Config`</a>__: Options for the program.
-
-|   Name    |   Type    |    Description    | Default |
-| --------- | --------- | ----------------- | ------- |
-| shouldRun | _boolean_ | A boolean option. | `true`  |
-| __text*__ | _string_  | A text to return. | -       |
+Checks if the function is a generator function.
 
 ```js
-/* alanode example/ */
 import isGeneratorFunction from '@goa/is-generator-function'
 
-(async () => {
-  const res = await isGeneratorFunction({
-    text: 'example',
-  })
-  console.log(res)
-})()
+console.log(isGeneratorFunction(function * generator() {} ))
+console.log(isGeneratorFunction({ * generator() {} }.generator))
+console.log(isGeneratorFunction(() => console.log('example')))
 ```
 ```
-example
+true
+true
+false
 ```
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
 
 ## Copyright
 
-(c) [Idio][1] 2019
-
-[1]: https://idio.cc
+<table>
+  <tr>
+    <th>
+      <a href="https://artd.eco">
+        <img src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png" alt="Art Deco" />
+      </a>
+    </th>
+    <th>© <a href="https://artd.eco">Art Deco</a> for <a href="https://idio.cc">Idio</a> 2019</th>
+    <th>
+      <a href="https://idio.cc">
+        <img src="https://avatars3.githubusercontent.com/u/40834161?s=100" width="100" alt="Idio" />
+      </a>
+    </th>
+    <th>
+      <a href="https://www.technation.sucks" title="Tech Nation Visa">
+        <img src="https://raw.githubusercontent.com/artdecoweb/www.technation.sucks/master/anim.gif"
+          alt="Tech Nation Visa" />
+      </a>
+    </th>
+    <th><a href="https://www.technation.sucks">Tech Nation Visa Sucks</a></th>
+  </tr>
+</table>
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/-1.svg?sanitize=true"></a></p>

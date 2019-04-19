@@ -17,6 +17,7 @@ const GeneratorFunction = generatorFunc ? getProto(generatorFunc) : {}
 
 /**
  * Check if the function is a generator function.
+ * @param {function} fn The function to check for being a generator.
  */
 export default function isGeneratorFunction(fn) {
   if (typeof fn != 'function') {

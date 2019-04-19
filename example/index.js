@@ -1,9 +1,5 @@
-/* alanode example/ */
 import isGeneratorFunction from '../src'
 
-(async () => {
-  const res = await isGeneratorFunction({
-    text: 'example',
-  })
-  console.log(res)
-})()
+console.log(isGeneratorFunction(function * generator() {} ))
+console.log(isGeneratorFunction({ * generator() {} }.generator))
+console.log(isGeneratorFunction(() => console.log('example')))

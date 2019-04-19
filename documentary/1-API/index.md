@@ -10,14 +10,11 @@ import isGeneratorFunction from '@goa/is-generator-function'
 
 ```## isGeneratorFunction
 [
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
+  ["fn", "function"]
 ]
 ```
 
-Call this function to get the result you want.
-
-%TYPEDEF types/index.xml%
+Checks if the function is a generator function.
 
 %EXAMPLE: example, ../src => @goa/is-generator-function%
 %FORK example%
