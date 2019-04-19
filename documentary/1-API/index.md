@@ -8,7 +8,7 @@ import isGeneratorFunction from '@goa/is-generator-function'
 
 %~%
 
-```## isGeneratorFunction
+```## isGeneratorFunction => boolean
 [
   ["fn", "function"]
 ]

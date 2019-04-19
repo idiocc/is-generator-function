@@ -14,7 +14,7 @@ yarn add @goa/is-generator-function
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`isGeneratorFunction(fn: function)`](#isgeneratorfunctionfn-function-void)
+- [`isGeneratorFunction(fn: function): boolean`](#isgeneratorfunctionfn-function-boolean)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -29,7 +29,7 @@ import isGeneratorFunction from '@goa/is-generator-function'
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
-## `isGeneratorFunction(`<br/>&nbsp;&nbsp;`fn: function,`<br/>`): void`
+## `isGeneratorFunction(`<br/>&nbsp;&nbsp;`fn: function,`<br/>`): boolean`
 
 Checks if the function is a generator function.
 
