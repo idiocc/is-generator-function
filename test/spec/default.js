@@ -1,4 +1,4 @@
-import { equal, ok } from 'zoroaster/assert'
+import { equal, ok } from '@zoroaster/assert'
 import isGeneratorFunction from '../../src'
 
 const Context = {

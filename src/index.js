@@ -1,4 +1,8 @@
-// https://github.com/ljharb/is-generator-function/blob/master/index.js
+/**
+ * @license MIT
+ * 2014 Jordan Harband
+ * https://github.com/ljharb/is-generator-function
+ */
 const toStr = Object.prototype.toString
 const fnToStr = Function.prototype.toString
 const isFnRegex = /^\s*(?:function)?\*/
@@ -17,7 +21,7 @@ const GeneratorFunction = generatorFunc ? getProto(generatorFunc) : {}
 
 /**
  * Check if the function is a generator function.
- * @param {function} fn The function to check for being a generator.
+ * @param {!Function} fn The function to check for being a generator.
  */
 export default function isGeneratorFunction(fn) {
   if (typeof fn != 'function') {

@@ -8,6 +8,6 @@ Original Author: **Jordan Harband**
 
 ---
 
-<IdioFooter />
+<idio-footer />
 
 %~ -1%
