@@ -1,6 +1,6 @@
 {
   "name": "@goa/is-generator-function",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "[fork] Checks If The Function Is An ES6 Generator.",
   "main": "build/index.js",
   "module": "src/index.js",
