@@ -1,3 +1,9 @@
+## 19 July 2019
+
+### [1.0.2](https://github.com/idiocc/is-generator-function/compare/v1.0.1...v1.0.2)
+
+- [types] Annotate the type correctly, add the license field.
+
 ## 19 April 2019
 
 ### [1.0.1](https://github.com/idiocc/is-generator-function/compare/v1.0.0...v1.0.1)

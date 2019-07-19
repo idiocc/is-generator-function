@@ -1,6 +1,5 @@
 /**
- * @license MIT
- * 2014 Jordan Harband
+ * @license MIT 2014 Jordan Harband
  * https://github.com/ljharb/is-generator-function
  */
 const toStr = Object.prototype.toString
